@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\cosourcing_gestion_employee_back.props" />
+</Project>
