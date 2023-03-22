@@ -8,20 +8,15 @@
 
         public string prenom { get; set;}
 
-        public string name { get; set; }
-
         public string email { get; set; }
 
         public string poste { get; set; }
 
         public string salaire { get; set; }
 
-        public string dateEmbauche { get; set; }
+        public DateTime dateEmbauche { get; set; }
 
         public string avantage { get; set; }
-
-
-
 
 
     }
