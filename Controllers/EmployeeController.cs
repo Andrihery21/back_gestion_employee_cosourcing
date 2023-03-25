@@ -54,7 +54,7 @@ namespace cosourcing_gestion_employee_back.Controllers
         {
             string query = @"
                         insert into employee (nom, prenom, email, poste, salaire, dateEmbauche, avantage) values
-                                                    (@nom, @prenom, @email, @poste, @salaire, @dateEmbauche, @avantage,);
+                                                    (@nom, @prenom, @email, @poste, @salaire, @dateEmbauche, @avantage);
                         
             ";
 
@@ -96,7 +96,7 @@ namespace cosourcing_gestion_employee_back.Controllers
                         poste =@poste,
                         salaire =@salaire,
                         dateEmbauche =@dateEmbauche,
-                        avantage =@avantage,
+                        avantage =@avantage
                         where employeeId=@employeeId;
                         
             ";
@@ -109,6 +109,7 @@ namespace cosourcing_gestion_employee_back.Controllers
                 mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
+                    myCommand.Parameters.AddWithValue("@employeeId", emp.employeeId);
                     myCommand.Parameters.AddWithValue("@nom", emp.nom);
                     myCommand.Parameters.AddWithValue("@prenom", emp.prenom);
                     myCommand.Parameters.AddWithValue("@email", emp.email);
